@@ -1,0 +1,7 @@
+.wp-pagenavi a, .wp-pagenavi a:link{color:#333; text-decoration:none; font-size:11px; border:1px solid #CCC; padding:0px 7px 0px 7px; margin:3px; font-weight:bold; }
+.wp-pagenavi a:visited{color:#333; text-decoration:none; }
+.wp-pagenavi a:hover{color:#333; }
+.wp-pagenavi a:active{color:#333; text-decoration:none; }
+.wp-pagenavi span.pages{color:#808080; padding:0 15px 0 0;}
+.wp-pagenavi span.current{color: #666; font-weight:bold; font-size:11px; background-color:#CCC; border:1px solid #CCC; padding:0px 7px 0px 7px; margin:3px;}
+.wp-pagenavi span.extend{color:#808080;  }

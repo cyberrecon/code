@@ -1,0 +1,83 @@
+ubuntu
+cloud-init
+ELBs
+DNS based load balancing - resolve based on data center
+S3 - can mount on local desktop -  expanddrive or transmit
+RDS > Own MySQL
+EBS root, io perf ,  use multiple ebs disks and stripe
+DynDNS
+architect for failure and consistency
+
+start with multiple puppets right away dev, staging, prod
+you can use either rsync or git
+
+split puppet code into modules
+
+use seperate init.pp params.pp & config.pp
+params.pp so u can include variables from elsewhere
+config.pp lets you 
+
+use a common base class
+  apt-fs-mounts-ntp-sudo-git-monitoring-ssh-and so on
+
+Sample Service
+class web_ui {
+  include base
+  include base
+  include base
+  include base
+  webui       {$fqdn}
+  apache::vhost {$fqdn:ssl => 443}
+  redis::config {$fqdn:memory => 100M}
+}
+
+Write tools to make you more productive,
+  enable developer to run their own puppet master
+  create new componenets easily
+  push changes to production
+
+git
+  bin
+    update_env.pl
+    run_puppet_master_locally.pl
+    new_component.pl
+  env
+    dev
+      forge
+      krux-modules
+      services
+    staging
+      ...
+    production
+      ...
+
+Use External node classifier - S3 web based 
+  manage host specific configuration seperately from manifests
+  see the docs
+
+{'classes
+
+
+python boto - best lib for talking to aws
+
+start_instance.py
+launch aws node - manage security group,type ami,puppet class,EBS,hostname
+  bootstraps the node for puppet, integrate with ENC
+
+take 5 minutes to spin up a new node
+
+security_groups.py
+    programmatically manage sec groups across regions
+
+cloudkick - monitoring nad graphing integrates with pager duty
+  we generate cloudkick config from puppet
+
+MONITOR and GRAPH everything
+PagerDuty
+NewRelic
+Mcollective
+Vagrant
+USB sticks
+
+
+
