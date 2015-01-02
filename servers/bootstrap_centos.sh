@@ -82,11 +82,11 @@ echo "======================================================="
 # install these rpm's from your own repo
 
 #mkdir /mnt/temp ; mount -o nolock 192.168.252.201:/distro /mnt/temp 
-#rpm -ivh --force /mnt/temp/qualys/RPMS/centos/6.2/bash-4.1.2-8.el6.x86_64.rpm
-#rpm -ivh --force /mnt/temp/qualys/RPMS/centos/6.2/epel-release-6-5.noarch.rpm
-#rpm -ivh --force /mnt/temp/qualys/RPMS/centos/6.2/security-banner-1.0-1.noarch.rpm
-#rpm -ivh --force /mnt/temp/qualys/RPMS/centos/6.2/admin-users-20120621-1.noarch.rpm
-#rpm -Uvh --force /mnt/temp/qualys/RPMS/centos/6.2/sudo-1.8.5-2.el6.x86_64.rpm
+#rpm -ivh --force /mnt/temp/RPMS/centos/6.2/bash-4.1.2-8.el6.x86_64.rpm
+#rpm -ivh --force /mnt/temp//RPMS/centos/6.2/epel-release-6-5.noarch.rpm
+#rpm -ivh --force /mnt/temp//RPMS/centos/6.2/security-banner-1.0-1.noarch.rpm
+#rpm -ivh --force /mnt/temp//RPMS/centos/6.2/admin-users-20120621-1.noarch.rpm
+#rpm -Uvh --force /mnt/temp//RPMS/centos/6.2/sudo-1.8.5-2.el6.x86_64.rpm
 
 sudo yum clean all
 sudo rpm --rebuilddb
@@ -107,7 +107,7 @@ mkdir -p /var/log/audit
 # 
 # cp /mnt/temp/kickstart/files/epel.repo /etc/yum.repos.d/epel.repo
 # cp /mnt/temp/kickstart/files/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
-# cp /mnt/temp/kickstart/files/qualys.repo /etc/yum.repos.d/qualys.repo
+# cp /mnt/temp/kickstart/files/.repo /etc/yum.repos.d/.repo
 # cp /mnt/temp/kickstart/files/yum.conf /etc/yum.conf
 # 
 yum -y install --enablerepo=epel syslog-ng
