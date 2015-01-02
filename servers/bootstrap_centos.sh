@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 # script to bootstrap a new centos based VPS from scratch
 # This script configures the following:
 #
@@ -8,7 +9,7 @@
 # ./bootstrap.sh > ~/bootstrap.log 2>&1
 #
 
-set -x # for verbosity
+# set -x # for verbosity
 
 cd ~/
 
@@ -20,7 +21,10 @@ sudo chmod 0664 /var/log/wtmp
 sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # accept ssh from home
-sudo iptables -A INPUT -p tcp --source 99.121.52.198/32 --dport ssh -j ACCEPT
+# echo -n enter the source ip from which you want to ssh from
+# read ANS
+# sudo iptables -A INPUT -p tcp --source 99.121.52.198/32 --dport ssh -j ACCEPT
+sudo iptables -A INPUT -p tcp --source 206.124.126.33/32 --dport ssh -j ACCEPT
 
 # accept http from everywhere
 sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
@@ -88,6 +92,7 @@ echo "======================================================="
 #rpm -ivh --force /mnt/temp//RPMS/centos/6.2/admin-users-20120621-1.noarch.rpm
 #rpm -Uvh --force /mnt/temp//RPMS/centos/6.2/sudo-1.8.5-2.el6.x86_64.rpm
 
+sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 sudo yum clean all
 sudo rpm --rebuilddb
 
