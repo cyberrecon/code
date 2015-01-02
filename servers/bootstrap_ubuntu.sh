@@ -1,5 +1,8 @@
 #!/bin/bash
-# script to bootstrap a new server from scratch
+# script to bootstrap a new debian based VPS from scratch
+# This script configures the following:
+#
+# iptables, ssh_keys, deploy user with sudo, install updates, install the latest version openssl, ruby and ruby_gems
 #
 # Usage:
 # ./bootstrap.sh > ~/bootstrap.log 2>&1
