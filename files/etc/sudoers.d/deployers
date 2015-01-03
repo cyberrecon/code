@@ -1,0 +1,3 @@
+# /etc/sudoers.d/deployers
+# mode 440
+%deploy   ALL=(ALL) NOPASSWD: ALL
