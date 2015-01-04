@@ -63,7 +63,7 @@ PasswordAuthentication no
 ClientAliveInterval 18
 ClientAliveCountMax 100
 EOF
-sudo service ssh restart
+sudo service sshd restart
 
 # set up deploy user with sudo access
 adduser --home-dir /home/deploy --shell /bin/bash --comment 'deploy user needs sudo' deploy
